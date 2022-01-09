@@ -92,7 +92,7 @@ python detection_video.py --model_def utils/yolov3-custom.cfg --checkpoint_model
 
 The results obtained are presented as a shopping ticket in .txt format and a video in .mp4 format where the objects are located and the confidence percentage is shown, shopping_output.mp4.
 
-![image](https://user-images.githubusercontent.com/87015133/148684936-0dcf41e8-8d68-4e7e-8278-dcc493cf206b.png)
+![image](https://user-images.githubusercontent.com/87015133/148689657-79c63fbf-1171-46bc-be38-72ff9ab45996.png)
 
 To obtain the shopping ticket, a simple system has been designed. In each frame of the video all the objects that are visible are located, however, in order to calculate the purchase price it is necessary to know the total number of objects, not the number of times each one appears. Assuming that the camera is above a conveyor belt at a supermarket checkout, it is possible to estimate how many frames an object will be located depending on the speed of the conveyor belt and the number of frames per second captured by the camera.
 
@@ -193,7 +193,7 @@ python deteccion_video.py --model_def utils/yolov3-custom.cfg --checkpoint_model
 
 Los resultados obtenidos se presentan como un ticket de la compra en formato .txt y un video en formato .mp4 donde se localizan los objetos y se muestra el porcentaje de confianza, shopping_output.mp4.
 
-![image](https://user-images.githubusercontent.com/87015133/148684936-0dcf41e8-8d68-4e7e-8278-dcc493cf206b.png)
+![image](https://user-images.githubusercontent.com/87015133/148689668-770d3dfe-d78e-4930-a425-c9611fe08263.png)
 
 Para obetener el ticket de la compra se ha diseñado un sistema sencillo. En cada frame del vídeo se localizan todos los objetos que sean visibles, no obstante, para poder calcular el precio de la compra es necesario saber el número total de objetos, no las veces que aparece cada uno. Suponiendo que la cámara se encuentra encima de una cinta transportadora en la caja de un supermercado, se puede estimar en cúantos frames será localizado un objeto en función de la velocidad de la cinta transportadora y el número de frames por segundo capturados por la cámara.
 
