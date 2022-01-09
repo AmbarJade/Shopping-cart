@@ -6,7 +6,8 @@ La motivación de este proyecto es diseñar una red neuronal que facilite la com
 
 El primer paso llevado a cabo en el proyecto fue diseñar una red de clasificación, FSI_project_Classification.ipynb. En este notebook de Python se cargan las librerías y la dirección de google drive donde se encuentran las imágenes de los productos, en este caso 50 de cada clase. El 80% de las imágenes se emplean para entrenar la red y el 20% restante para la validación. La red neuronal diseñada tiene la siguiente estructura:
 
-![image](https://user-images.githubusercontent.com/87015133/148682589-1d879436-424b-4013-8380-152ee774b5e5.png)
+![image](https://user-images.githubusercontent.com/87015133/148682631-98568d38-6a13-4bc5-a873-23b31b142860.png)
+
 
 
 
