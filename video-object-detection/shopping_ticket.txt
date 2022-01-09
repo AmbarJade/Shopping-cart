@@ -1,0 +1,11 @@
+
+		Alba & Ambar's supermarket
+
+Date:2022-01-08				Time:13:57:29
+
+Product		       Price	   Units	Total
+Coke                    0.80 €        3        2.40 €
+Potato chips            3.25 €        1        3.25 €
+_____________________________________________________
+
+Total price                                    5.65 €
