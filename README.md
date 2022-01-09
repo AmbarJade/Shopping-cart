@@ -137,7 +137,7 @@ Al tener parte de la red preentrenada, se consiguen precisiones muy altas en poc
 
 Se puede profundizar un poco más en el proyecto haciendo una red neuronal de localización, es decir, una red que nos permita identificar diferentes productos en una única imagen, y pensando en las aplicaciones prácticas de la red neuronal, en un vídeo. De esta forma, se podría diseñar una aplicación de movil donde un cliente del supermercado saque una foto o grabe su cesta de la compra y sepa cuánto se va a gastar. O bien, que se instale una cámara sobre la cinta transportadora de la caja del supermercado y se calcule el precio de la compra mientras van pasando los productos.
 
-Esta segunda parte del proyecto está basada en el proyecto [deteccion-objetos-video](https://github.com/puigalex/deteccion-objetos-video) para correr detección de objetos sobre en un stream de video en vivo. [YOLO](https://pjreddie.com/darknet/yolo/) (**You Only Look Once**) es un modelo optimizado para generar detecciones de elementos a una velocidad muy alta, por ello es una muy buena opción para usarlo en video. Por defecto este modelo esta pre entrenado para detectar 80 objetos distintos [data/coco.names](https://github.com/puigalex/deteccion-objetos-video/blob/master/data/coco.names)
+Esta segunda parte del proyecto está basada en el proyecto [deteccion-objetos-video](https://github.com/puigalex/deteccion-objetos-video) para correr detección de objetos sobre en un stream de vídeo en vivo. [YOLO](https://pjreddie.com/darknet/yolo/) (**You Only Look Once**) es un modelo optimizado para generar detecciones de elementos a una velocidad muy alta, por ello es una muy buena opción para usarlo en vídeo. Por defecto este modelo esta pre entrenado para detectar 80 objetos distintos [data/coco.names](https://github.com/puigalex/deteccion-objetos-video/blob/master/data/coco.names)
 
 #### Preparar el entorno para ejecutar el código
 
@@ -152,13 +152,13 @@ Para correr el modelo de yolo tendremos que descargar los pesos de la red neuron
 bash weights/download_weights.sh
 ```
 
-#### Correr el detector de objetos en video 
-Se puede ejecutar el programa con el siguiente comando. Así se iniciará un video con la webcam que se encuentre conectada al ordenador y se localizarán objetos en streaming.
+#### Correr el detector de objetos en vídeo 
+Se puede ejecutar el programa con el siguiente comando. Así se iniciará un vídeo con la webcam que se encuentre conectada al ordenador y se localizarán objetos en streaming.
 ```
 python deteccion_video.py
 ```
 
-También se puede correr el código sobre un video ya grabado:
+También se puede correr el código sobre un vídeo ya grabado:
 ```
 python deteccion_video.py --webcam 0 --directorio_video <directorio_al_video.mp4>
 ```
@@ -186,16 +186,16 @@ Entrenar el modelo con las clases nuevas:
  python train.py --model_def utils/yolov3-custom.cfg --data_config utils/custom.data --pretrained_weights weights/darknet53.conv.74 --batch_size 2
  ```
 
-#### Correr deteccion de objetos en video con nuestras clases
+#### Correr deteccion de objetos en vídeo con nuestras clases
 ```
 python deteccion_video.py --model_def utils/yolov3-custom.cfg --checkpoint_model checkpoints/yolov3_ckpt_99.pth --class_path utils/classes.names  --weights_path checkpoints/yolov3_ckpt_99.pth  --conf_thres 0.85 --webcam 0 --directorio_video shopping.mp4
 ```
 
-Los resultados obtenidos se presentan como un ticket de la compra en formato .txt y un video en formato .mp4 donde se localizan los objetos y se muestra el porcentaje de confianza, shopping_output.mp4.
+Los resultados obtenidos se presentan como un ticket de la compra en formato .txt y un vídeo en formato .mp4 donde se localizan los objetos y se muestra el porcentaje de confianza, shopping_output.mp4.
 
 ![image](https://user-images.githubusercontent.com/87015133/148689668-770d3dfe-d78e-4930-a425-c9611fe08263.png)
 
 Para obetener el ticket de la compra se ha diseñado un sistema sencillo. En cada frame del vídeo se localizan todos los objetos que sean visibles, no obstante, para poder calcular el precio de la compra es necesario saber el número total de objetos, no las veces que aparece cada uno. Suponiendo que la cámara se encuentra encima de una cinta transportadora en la caja de un supermercado, se puede estimar en cúantos frames será localizado un objeto en función de la velocidad de la cinta transportadora y el número de frames por segundo capturados por la cámara.
 
-La precisión alcanzada en el video no es muy elevada ya que se deberían utilizar entre 700 y 900 imágenes de cada clase que se quiera distinguir y se han empleado unas 70 por clase. Sin embargo, a pesar de las pocas imágenes empleadas los resultados obtenidos son satisfactorios y mejorar la precisión es cuestión de dedicar más tiempo a etiquetar imágenes.
+La precisión alcanzada en el vídeo no es muy elevada ya que se deberían utilizar entre 700 y 900 imágenes de cada clase que se quiera distinguir y se han empleado unas 70 por clase. Sin embargo, a pesar de las pocas imágenes empleadas los resultados obtenidos son satisfactorios y mejorar la precisión es cuestión de dedicar más tiempo a etiquetar imágenes.
 
