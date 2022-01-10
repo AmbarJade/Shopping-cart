@@ -10,19 +10,19 @@ The first step carried out in the project was to design a classification neural 
 
 ![image](https://user-images.githubusercontent.com/87015133/148682631-98568d38-6a13-4bc5-a873-23b31b142860.png)
 
-The network is trained with categorical cross-entropy loss, Adams optimiser, accuracy as a metric and EarlyStopping is also used.
+The network is trained with categorical cross-entropy loss, Nadams optimiser, accuracy as a metric and EarlyStopping is also used.
 
-![image](https://user-images.githubusercontent.com/87015133/148682703-98ed83a4-a321-4a06-96fc-cfb39b3567b8.png)
+![image](https://user-images.githubusercontent.com/87015133/148851526-1451d476-e91b-4337-9079-f911a009a90f.png)
 
-An accuracy of 83% is achieved over 14 epochs. The worst classified products are those with similar colours.
+An accuracy of 87% is achieved with the validation dataset. The worst classified products are those with similar colours.
 
 #### Data augmentation
 
 As few images are available for each class, the performance of the neural network can be improved by using data augmentation techniques. These consist of augmenting the training data set by inverting, zooming, rotating, etc. the available images to obtain new ones.
 
-![image](https://user-images.githubusercontent.com/87015133/148682990-fd8962b5-3345-43bc-b136-d9f6dcfe35c7.png)
+![image](https://user-images.githubusercontent.com/87015133/148853764-8f04006f-3268-48ce-8707-d6aca3913eb3.png)
 
-This results significantly improved accuracy, exceeding 95% in 13 epochs.
+This results significantly improved accuracy, exceeding 95% accuracy with validation dataset.
 
 #### Transfer learning
 
@@ -111,19 +111,19 @@ El primer paso llevado a cabo en el proyecto fue diseñar una red neuronal de cl
 
 ![image](https://user-images.githubusercontent.com/87015133/148682631-98568d38-6a13-4bc5-a873-23b31b142860.png)
 
-La red se entrena con pérdida de entropía cruzada categórica, optimizador Adams y en función de la precisión como métrica, y también se hace uso de la técnica EarlyStopping.
+La red se entrena con pérdida de entropía cruzada categórica, optimizador Ndams y en función de la precisión como métrica, y también se hace uso de la técnica EarlyStopping.
 
-![image](https://user-images.githubusercontent.com/87015133/148682703-98ed83a4-a321-4a06-96fc-cfb39b3567b8.png)
+![image](https://user-images.githubusercontent.com/87015133/148851576-e81a91d9-186a-4dff-9cd2-6f777619eb09.png)
 
-Se consigue una precisión del 83% en 14 épocas. Los productos que se clasifican peor son aquellos que tiene colores similares.
+Se consigue una precisión del 83% con el conjunto de datos de validación. Los productos que se clasifican peor son aquellos que tiene colores similares.
 
 #### Data augmentation
 
 Como se disponen de pocas imágenes para cada clase, el rendimiento de la red neuronal se puede mejorar utilizando técnicas de data augmentation. Estas consisten en aumentar el conjunto de datos de entrenamiento invirtiendo, ampliando, rotando, etc. las imágenes disponibles para obtener otras nuevas.
 
-![image](https://user-images.githubusercontent.com/87015133/148682990-fd8962b5-3345-43bc-b136-d9f6dcfe35c7.png)
+![image](https://user-images.githubusercontent.com/87015133/148853746-3e40341c-be61-470d-92e8-99bbc40c166e.png)
 
-De esta forma se obtiene una clara mejoría en la precisión, que supera el 95% en 13 épocas.
+De esta forma se obtiene una clara mejoría en la precisión, que supera el 95% de precisión con el conjunto de datos de validación.
 
 #### Transfer learning
 
